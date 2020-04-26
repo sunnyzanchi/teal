@@ -1,0 +1,22 @@
+{
+  "name": "teal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel --open -p 3000 ./src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "parcel": "^1.12.4"
+  },
+  "dependencies": {
+    "date-fns": "^2.12.0",
+    "preact": "^10.4.1",
+    "reset-css": "^5.0.1"
+  }
+}

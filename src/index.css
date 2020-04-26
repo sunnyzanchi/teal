@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:200i|IBM+Plex+Sans:200|Oleo+Script&display=swap');
+
+:root {
+  --primary: #1bdcc5;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 10px;
+  line-height: 1.1;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.bubble {
+  background: #f3f3f3;
+  border-radius: 10px;
+  color: #222;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  padding: 6px;
+}
+
+.header {
+  align-items: center;
+  background-color: var(--primary);
+  color: #fff;
+  display: flex;
+  font-family: 'Oleo Script';
+  font-size: 30px;
+  height: 41px;
+  justify-content: center;
+  width: 100%;
+}
+
+.page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.timeline {
+  flex-grow: 1;
+  overflow: scroll;
+  position: relative;
+  padding: 44px 24px;
+  width: 100%;
+}
+
+.tl-event {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  left: 24px;
+  position: absolute;
+  right: 24px;
+}
+
+.tl-event .bubble-container {
+  display: flex;
+  justify-content: flex-end;
+  transform: translateY(-90%);
+  width: 60%;
+}
+
+/* TODO: Fix horizontal positioning */
+/* This is using left: 60.5% but it's inside of 
+ * tl-event, but middle-line isn't, which makes this
+ * not quite right
+ */
+.tl-dot {
+  background: #fff;
+  border: 2px solid #555;
+  border-radius: 50%;
+  height: 9px;
+  left: 60.5%;
+  position: absolute;
+  transform: translateY(-50%);
+  width: 9px;
+}
+
+.tl-line {
+  background: #aaa;
+  height: 1px;
+  left: 25%;
+  position: absolute;
+  top: 0;
+  width: 50%;
+}
+
+.middle-line {
+  background: #aaa;
+  left: 60%;
+  position: absolute;
+  width: 2px;
+}
+
+.month,
+.year {
+  color: #444;
+  font-family: 'IBM Plex Mono';
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 200;
+  transform: translateY(-50%);
+  width: 22%;
+}
+
+.month {
+  font-size: 16px;
+}
