@@ -1,0 +1,5 @@
+/* This is in a separate file so we can run our CSS after the reset.
+ * parcel doesn't handle @imports correctly, so if this is in our index.css
+ * and the index.css is after the reset, these fonts don't get loaded
+ */
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:200i|IBM+Plex+Sans:200|Oleo+Script&display=swap');

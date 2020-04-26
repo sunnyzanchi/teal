@@ -12,8 +12,8 @@ export const getPercent = (start, end, current) =>
  * For the first date in a new year, display the year.
  * For the first date in a new month, display the month.
  * Otherwise, display nothing
- * @param {*} dates
- * @param {*} date
+ * @param {Date[]} dates
+ * @param {Date} date
  */
 export const getDateDisplay = (dates, date) => {
   const i = dates.findIndex((d) => d === date)

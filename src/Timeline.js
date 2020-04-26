@@ -12,7 +12,7 @@ const month = format('MMMM')
 const year = format('yyyy')
 
 // TODO: Declump events that are too close
-const Timeline = ({ events }) => {
+const Timeline = ({ events, onDelete }) => {
   const earliest = min(events.map((e) => e.date))
   const latest = max(events.map((e) => e.date))
 
@@ -20,6 +20,8 @@ const Timeline = ({ events }) => {
   // if height is 2 here, the timeline will be 200vh
   const height = events.length < 4 ? 0.8 : Math.sqrt(events.length / 2)
   const heightInPixels = document.documentElement.clientHeight * height
+
+  const deleteEvent = (i) => () => onDelete(i)
 
   events = events.map((e) => ({
     ...e,
@@ -32,7 +34,7 @@ const Timeline = ({ events }) => {
     <div class="timeline">
       <div class="middle-line" style={{ height: `${height * 100}vh` }} />
 
-      {events.map((e) => {
+      {events.map((e, i) => {
         const showType = getDateDisplay(
           events.map((e) => e.date),
           e.date
@@ -47,7 +49,13 @@ const Timeline = ({ events }) => {
         return (
           <div class="tl-event" style={{ top: `${e.top + TOP_OFFSET}px` }}>
             <div class="bubble-container">
-              <div class="bubble">{e.text}</div>
+              <div
+                class="bubble"
+                onClick={deleteEvent(i)}
+                style={{ background: e.color }}
+              >
+                {e.text}
+              </div>
             </div>
 
             <div class="tl-line" />
