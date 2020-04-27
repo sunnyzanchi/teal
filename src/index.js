@@ -17,7 +17,7 @@ const deserialize = (event) => ({ ...event, date: new Date(event.date) })
 
 const App = () => {
   const [showModal, setShowModal] = useState(false)
-  const [events, setEvents] = useLocalStorage('events')
+  const [events, setEvents] = useLocalStorage('events', [])
 
   const deleteEvent = (i) =>
     setEvents((e) => {
